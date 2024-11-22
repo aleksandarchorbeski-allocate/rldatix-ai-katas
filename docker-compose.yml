@@ -1,0 +1,34 @@
+services:
+  backend:
+    image: "oven/bun"
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["sh", "-c", "bun install && bun run build && bun run backend/server.ts"]
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - chromadb
+
+  frontend:
+    image: "oven/bun"
+    working_dir: /app/dist
+    volumes:
+      - .:/app
+      # - /app/node_modules
+    command: ["sh", "-c", "bun install && bun run build && bun run vite --host 0.0.0.0"]
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+
+  chromadb:
+    image: "chromadb/chroma"
+    ports:
+      - "8000:8000"
+    environment:
+      ANONYMIZED_TELEMETRY: "False"

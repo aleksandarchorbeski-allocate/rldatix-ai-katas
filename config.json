@@ -1,0 +1,9 @@
+{
+    "EMBEDDING_MODEL": "text-embedding-3-small",
+    "mainmodel": "gpt-4o-mini",
+    "OPENAI_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "OPENAI_API_URL_EMBEDDINGS": "https://api.openai.com/v1/embeddings",
+    "OPENAI_API_URL_COMPLETIONS": "https://api.openai.com/v1/chat/completions",
+    "CHROMA_URL": "http://localhost:8000",
+    "BACKEND_URL": "http://localhost:8001"
+}

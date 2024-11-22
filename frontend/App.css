@@ -1,0 +1,182 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0 10%;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #fafafa; /* Soft light background color for the page */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Panel (Chat Box and Input Area) */
+.right-panel {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e0dede;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-wrap: wrap;
+}
+
+.user-bubble {
+  align-self: flex-start;
+  background-color: #e0f7fa;
+  color: #00796b;
+  border: 1px solid #00796b;
+}
+
+.assistant-bubble {
+  align-self: flex-end;
+  background-color: #f1f8e9;
+  color: #388e3c;
+  border: 1px solid #388e3c;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.input-panel {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 80%;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-panel:focus {
+  border-color: #5c6bc0;
+  box-shadow: 0 0 5px rgba(92, 107, 192, 0.5);
+  outline: none;
+}
+
+.input-panel::placeholder {
+  color: #999;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+button:disabled {
+  background-color: #b2dfdb;
+  cursor: not-allowed;
+}
+
+.input-button{
+  padding: .7rem 1rem;
+  border-radius: 50%;
+}
+
+.table-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.table-container th,
+.table-container td {
+  padding: 0.8rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table-container th {
+  background: #00796b;
+  color: white;
+}
+
+.table-container td {
+  background: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .right-panel {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .input-panel {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
